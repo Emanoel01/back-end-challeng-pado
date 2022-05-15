@@ -11,6 +11,6 @@ public class Device {
     private String mac;
     private String email;
     private String latitude;
-    private  String longitude;
+    private String longitude;
 
 }

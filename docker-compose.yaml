@@ -5,6 +5,17 @@ networks:
     driver: bridge
 
 services:
+
+  app:
+    build: .
+    ports:
+    - "8080:8080"
+    extra_hosts:
+      - 172.21.0.1
+    depends_on:
+      - rabbit
+
+
   rabbit:
     image: rabbitmq:3-management-alpine
     ports:
@@ -15,3 +26,5 @@ services:
      RABBITMQ_DEFAULT_PASS: 123456
     networks:
        - app-tier
+    extra_hosts:
+      - 172.21.0.1

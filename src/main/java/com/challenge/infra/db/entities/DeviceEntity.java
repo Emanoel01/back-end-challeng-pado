@@ -15,6 +15,7 @@ public class DeviceEntity {
 
     @Id
     @GeneratedValue
+    @Column(unique = true)
     private UUID deviceId;
 
     @Column
@@ -27,8 +28,8 @@ public class DeviceEntity {
     private String email;
 
     @Column
-    private String latitude;
+    private Double latitude;
 
     @Column
-    private  String longitude;
+    private  Double longitude;
 }

@@ -1,10 +1,6 @@
 package com.challenge.presentation.dto.device;
 
 import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.validation.annotation.Validated;
-
-import javax.validation.Validator;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -25,11 +21,9 @@ public class DeviceDto {
     private String email;
 
     @NotNull
-    @NotBlank
-    private String latitude;
+    private Double latitude;
 
     @NotNull
-    @NotBlank
-    private String longitude;
+    private Double longitude;
 
 }

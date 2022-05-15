@@ -6,11 +6,11 @@ import java.util.UUID;
 @Data
 public class Device {
 
-    private UUID id;
+    private UUID deviceId;
     private String name;
     private String mac;
     private String email;
-    private String latitude;
-    private String longitude;
+    private Double latitude;
+    private Double longitude;
 
 }

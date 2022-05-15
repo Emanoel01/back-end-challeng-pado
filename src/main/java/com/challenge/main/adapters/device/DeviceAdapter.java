@@ -2,12 +2,9 @@ package com.challenge.main.adapters.device;
 
 import com.challenge.domain.models.Device;
 import com.challenge.infra.db.entities.DeviceEntity;
+import com.challenge.presentation.controllers.responses.device.RegistrateDeviceResponse;
 import com.challenge.presentation.dto.device.DeviceDto;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
-
-import javax.validation.Validator;
 
 public class DeviceAdapter {
 
@@ -29,6 +26,19 @@ public class DeviceAdapter {
         DeviceEntity entity = new DeviceEntity();
         BeanUtils.copyProperties(deviceDto, entity);
         return entity;
+    }
+
+    public static RegistrateDeviceResponse adaptDeviceToRegistrateDeviceResponse(Device device){
+        RegistrateDeviceResponse response = new RegistrateDeviceResponse();
+        response.setMac(device.getMac());
+        response.setDeviceId(device.getDeviceId());
+        return response;
+    }
+
+    public static Device adaptDeviceDtoToDevice(DeviceDto deviceDto){
+        Device device = new Device();
+        BeanUtils.copyProperties(deviceDto, device);
+        return device;
     }
 
 }
